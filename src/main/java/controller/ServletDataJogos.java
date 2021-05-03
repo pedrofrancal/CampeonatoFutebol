@@ -28,7 +28,7 @@ public class ServletDataJogos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String data = request.getParameter("data");
-		System.out.println(data);
+		//System.out.println(data);
 		JogosDAO jd = new JogosDAO();
 		ArrayList<Jogos> listagem = new ArrayList<>();
 		try {

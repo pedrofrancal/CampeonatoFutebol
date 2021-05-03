@@ -38,26 +38,53 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h3 class="text-success text-center">
-					JOGOS NO DIA <c:out value="${data}"></c:out>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>TIME A</th>
-								<th></th>
-								<th>Time B</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="grupos" items="${listagem}">
-								<tr class="table-warning">
-									<td>${grupos.getNomeTimeA()}</td>
-									<td>X</td>
-									<td>${grupos.getNomeTimeB()}</td>
+					JOGOS NO DIA
+					<c:out value="${data}"></c:out>
+					<form action="atualizaJogos" method="post">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>TIME A</th>
+									<th>GOLS</th>
+									<th></th>
+									<th>GOLS</th>
+									<th>Time B</th>
 								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-
+							</thead>
+							<tbody>
+								<c:forEach var="grupos" items="${listagem}" varStatus="contador" >
+									<tr class="table-warning">
+										<input type="hidden" name="codigoA${contador.count}"
+											value="${grupos.getCodigoTimeA()}" type="text">
+										<input type="hidden" name="codigoB${contador.count}"
+											value="${grupos.getCodigoTimeB()}" type="text">
+										<td><input class="text-center"
+											name="timeA${contador.count}"
+											value="${grupos.getNomeTimeA()}" readonly></td>
+										<td>
+											<div class="form-group mx-sm-3 mb-2">
+												<input class="form-control text-center" type="number"
+													name="golsA${contador.count}"
+													value="${grupos.getGolsTimeA()}">
+											</div>
+										</td>
+										<td>X</td>
+										<td>
+											<div class="form-group mx-sm-3 mb-2">
+												<input class="form-control text-center" type="number"
+													name="golsB${contador.count}"
+													value="${grupos.getGolsTimeB()}">
+											</div>
+										</td>
+										<td><input class="text-center"
+											name="timeA${contador.count}"
+											value="${grupos.getNomeTimeB()}" readonly></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+						<input type="submit" value="ATUALIZAR PLACAR">
+					</form>
 				</h3>
 			</div>
 		</div>
