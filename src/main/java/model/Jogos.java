@@ -8,7 +8,14 @@ public class Jogos {
 	private String codigoTimeB;
 	private String nomeTimeA;
 	private String nomeTimeB;
+	private int golsTimeA;
+	private int golsTimeB;
+	private LocalDate dataJogo;
 
+	public Jogos() {
+		super();
+	}
+	
 	public String getNomeTimeA() {
 		return nomeTimeA;
 	}
@@ -23,14 +30,6 @@ public class Jogos {
 
 	public void setNomeTimeB(String nomeTimeB) {
 		this.nomeTimeB = nomeTimeB;
-	}
-
-	private int golsTimeA;
-	private int golsTimeB;
-	private LocalDate dataJogo;
-
-	public Jogos() {
-		super();
 	}
 
 	public String getCodigoTimeA() {

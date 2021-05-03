@@ -72,6 +72,30 @@
 					</form>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12 py-3">
+					<form action="tabelarGrupos" method="post">
+						<button type="submit" value="mostrar"
+							class="btn btn-block btn-lg btn-dark">CLASSIFICAÇÃO POR GRUPO</button>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 py-3">
+					<form action="classificacaoGeral" method="post">
+						<button type="submit" value="gerar"
+							class="btn btn-block btn-info btn-lg">CLASSIFICAÇÃO GERAL</button>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 py-3">
+					<form action="quartasFinais" method="post">
+						<button type="submit" value="gerar"
+							class="btn btn-block btn-success btn-lg">SIMULAR QUARTAS DE FINAIS</button>
+					</form>
+				</div>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12 py-3 text-center">
